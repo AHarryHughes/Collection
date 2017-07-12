@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Album</title>
+</head>
+<body>
+    <form action="/:{{title}}/:{{artist}}" method="post">
+        <div class='nuAlbum'>
+            <h1>Title<input type="text" name="title" placeholder="{{tmp_album.title}}" value="{{tmp_album.title}}"></h1>
+            <h2>Artist<input type="text" name="artist" placeholder="{{tmp_album.artist}}" value="{{tmp_album.artist}}"></h2>
+            <p>Rating out of ten<input type="text" name="rating_out_of_ten" placeholder="{{tmp_album.rating_out_of_ten}}" value="{{tmp_album.rating_out_of_ten}}"></p>
+            <p>Favorite Tracks:</p>
+            <ul>
+                <li><input type="text" name="track_1" placeholder="{{tmp_album.favorite_tracks[0]}}" value="{{tmp_album.favorite_tracks.0}}"></li>
+                <li><input type="text" name="track_2" placeholder="{{tmp_album.favorite_tracks[1]}}" value="{{tmp_album.favorite_tracks.1}}"></li>
+                <li><input type="text" name="track_3" placeholder="{{tmp_album.favorite_tracks[2]}}" value="{{tmp_album.favorite_tracks.2}}"></li>
+                <li><input type="text" name="track_4" placeholder="{{tmp_album.favorite_tracks[3]}}" value="{{tmp_album.favorite_tracks.3}}"></li>
+                <li><input type="text" name="track_5" placeholder="{{tmp_album.favorite_tracks[4]}}" value="{{tmp_album.favorite_tracks.4}}"></li>
+            </ul>
+            <button>Submit</button>
+        </div>
+   </form>
+</body>
+</html>

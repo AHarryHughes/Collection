@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>daCollection</title>
+</head>
+<body>
+    <div class='Albums'>
+        {{#model}}
+        <div class='Album'>
+            <h1>{{title}}</h1>
+            <h2>{{artist}}</h2>
+            <p>{{rating_out_of_ten}}</p>
+            <ul>
+                {{#favorite_tracks}}
+                <li>{{.}}</li>
+                {{/favorite_tracks}}
+            </ul>
+            <form action="/{{title}}" method="delete"><button>DELETE</button></form>
+            <form action="/{{title}}/{{artist}}" method="get"><button>Edit</button></form>    
+        </div>
+        {{/model}}
+    </div>
+    <form action="/" method="post">
+        <div class='nuAlbum'>
+            <h1>Title<input type="text" name="title"></h1>
+            <h2>Artist<input type="text" name="artist"></h2>
+            <p>Rating out of ten<input type="text" name="rating_out_of_ten"></p>
+            <p>Favorite Tracks:</p>
+            <ul>
+                <li><input type="text" name="track_1"></li>
+                <li><input type="text" name="track_2"></li>
+                <li><input type="text" name="track_3"></li>
+                <li><input type="text" name="track_4"></li>
+                <li><input type="text" name="track_5"></li>
+            </ul>
+            <button>Submit</button>
+        </div>
+   </form>
+</body>
+</html>
